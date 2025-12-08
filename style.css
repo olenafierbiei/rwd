@@ -1,0 +1,107 @@
+body {
+  background-color: white;
+}
+
+header {
+  background-color: white;
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 14px;
+}
+
+nav {
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 3px;
+
+}
+
+.nav-links a:hover {
+  text-decoration: dashed;
+}
+
+.first-screen {
+  position: relative;
+  text-align: left;
+}
+
+.first-screen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.first-screen h1 {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+}
+
+h1 {
+  font-family: Red Hat Display;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 48px;
+  letter-spacing: 5%;
+}
+
+h3 {
+  font-family: Red Hat Display;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+h5 {
+  font-family: Red Hat Display;
+  font-weight: 500;
+  font-size: 23px;
+}
+
+h4 {
+  font-family: Red Hat Display;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+p {
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 16px;
+  color: #565656;
+}
+
+button {
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 16px;
+}
