@@ -35,17 +35,31 @@ nav {
 
 .nav-links li {
   display: inline;
+  position: relative;
+  margin: 0 15px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: black;
-  letter-spacing: 3px;
-
+  letter-spacing: 2px;
+  position: relative;
 }
 
-.nav-links a:hover {
-  text-decoration: dashed;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1)
 }
 
 .first-screen {
@@ -72,7 +86,6 @@ h1 {
   font-weight: 600;
   font-style: SemiBold;
   font-size: 48px;
-  letter-spacing: 5%;
 }
 
 h3 {
@@ -104,4 +117,313 @@ button {
   font-family: Lato;
   font-weight: 700;
   font-size: 16px;
+}
+
+.main-content {
+  margin: 60px;
+}
+
+.article {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+#article1,
+#article2 {
+  margin-bottom: 50px;
+}
+
+.image1 {
+  flex-basis: 50%;
+  flex-shrink: 0;
+
+}
+
+.imege1 img,
+.article img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#technology1,
+#technology2 {
+  flex-basis: 50%;
+  flex-grow: 1;
+  width: auto;
+  height: auto;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+
+  .article {
+    flex-direction: column-reverse;
+  }
+
+  #article2 {
+    flex-direction: column;
+  }
+
+  .imege1,
+  #technology1,
+  #technology2 {
+    flex-basis: 100%;
+  }
+}
+
+.latest {
+  margin: 60px;
+}
+
+heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.latest-posts {
+  display: flex;
+  gap: 30px;
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foto {
+  flex-basis: 50%;
+  flex-shrink: 0;
+}
+
+.foto img {
+  width: 100%;
+  height: auto;
+  display: block;
+  height: 260px;
+}
+
+.latest-posts {
+  display: flex;
+  gap: 30px;
+}
+
+
+@media (max-width: 768px) {
+
+  .latest-posts,
+  #interface,
+  .info,
+  {
+  flex-direction: column;
+  gap: 40px;
+}
+
+#post1,
+#post2,
+#post3,
+.article,
+.creativity,
+.info2,
+.full-time {
+  width: 100%;
+}
+
+.foto {
+  flex-basis: auto;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+}
+
+.popular {
+  margin: 60px;
+}
+
+#interface {
+  display: flex;
+  gap: 30px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  margin: 50px;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 10%;
+  color: white;
+  background-color: #565656;
+  padding: 10px 45px;
+  border: none;
+}
+
+button:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+
+}
+
+.full-time p {
+  font-family: Red Hat Display;
+  font-weight: 400;
+  font-size: 23px;
+  letter-spacing: 10%;
+}
+
+.info2 p {
+  font-family: Lato;
+  font-weight: 400;
+  font-size: 19px;
+  color: #565656;
+}
+
+footer {
+  background-color: #F4F4F4;
+}
+
+#contact1 {
+  margin: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  margin: 150px 0 0px 0;
+}
+
+.social nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.social a:hover svg rect {
+  stroke: #565656;
+}
+
+.social a:hover svg path {
+  fill: #565656;
+}
+
+.social a:hover svg rect:first-child {
+  fill: #565656;
+}
+
+.social a:hover svg rect+path {
+  fill: white;
+}
+
+#copyright {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+
+  #contact1 {
+    flex-direction: column;
+  }
+
+  #cta,
+  .social,
+  #copyright {
+    width: 100%;
+    flex-basis: 100%;
+
+    margin-bottom: 20px;
+  }
+
+}
+
+/* ========================================= */
+/* БАЗОВІ СТИЛІ (Desktop First) */
+/* ========================================= */
+.container {
+  display: flex;
+  justify-content: space-between;
+  /* Розводимо лого та навігацію */
+  align-items: center;
+  padding: 10px 5%;
+}
+
+/* Приховуємо кнопку гамбургер-меню на десктопі */
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.nav-links {
+  /* Робимо посилання горизонтальними на десктопі */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+
+/* ========================================= */
+/* АДАПТАЦІЯ (Mobile) */
+/* ========================================= */
+@media (max-width: 768px) {
+
+  /* 1. Показуємо кнопку меню */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* 2. Налаштування навігації для мобільного вигляду */
+  .nav-links {
+    /* Переносимо список у вертикальний стовпець */
+    flex-direction: column;
+
+    /* Розміщуємо меню під логотипом, займаючи всю ширину */
+    position: absolute;
+    top: 60px;
+    /* Зсуваємо під висоту хедера */
+    left: 0;
+    width: 100%;
+    background: #f4f4f4;
+    /* Фон меню */
+    padding: 20px 0;
+    z-index: 10;
+
+    /* КЛЮЧОВИЙ КРОК: Приховуємо меню за замовчуванням */
+    display: none;
+  }
+
+  /* 3. Стиль для активного меню (буде додано через JS) */
+  .nav-links.active {
+    display: flex;
+    /* Показуємо меню, коли є клас 'active' */
+  }
+
+  /* Стилі для посилань всередині мобільного меню */
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
 }
